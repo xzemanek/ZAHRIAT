@@ -8,7 +8,19 @@
 		unsigned int dlzka;
 	}MNC;
 	
-	
+	void nacitaj_pole(MNC *A)
+	{
+		int i;
+		printf("zadaj dlzku pola\n");
+		scanf("%d",&A->dlzka);
+		A->pole=malloc(A->dlzka*sizeof(int));
+		printf("zadaj prvky pola\n");
+		for(i=0;i<A->dlzka;i++)
+		{
+			scanf("%d",&A->pole[i]);
+		}
+		printf("\n");
+	}
 	
 	int main()
 	{
