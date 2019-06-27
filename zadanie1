@@ -1,1 +1,9 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define ZHODA 1
+#define NEZHODA 0
 
+	typedef struct {
+		int *pole;
+		unsigned int dlzka;
+	}MNC;
