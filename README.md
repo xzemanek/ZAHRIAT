@@ -1,0 +1,2 @@
+# ZAHRIAT
+zahrievacie zadanie - opravené
