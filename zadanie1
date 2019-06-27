@@ -25,4 +25,7 @@
 	int main()
 	{
 		MNC A,B,C,D;
+		
+		nacitaj_pole(&A);
+		nacitaj_pole(&B);
 	}
