@@ -7,3 +7,10 @@
 		int *pole;
 		unsigned int dlzka;
 	}MNC;
+	
+	
+	
+	int main()
+	{
+		MNC A,B,C,D;
+	}
