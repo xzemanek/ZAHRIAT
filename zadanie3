@@ -1,0 +1,40 @@
+#include<stdio.h>
+#include<stdlib.h>
+#define LOWL_OK 1
+#define LOWL_PROBLEM 0
+	typedef struct OWN
+	{
+	    float data;
+	    struct OWN *next;
+	}OWN;
+	
+	typedef struct LOWL
+	{
+	    OWN *beg;
+	    OWN *cur;
+	}LOWL;
+	
+	char lowl_interpolate_linear(LOWL *list)
+	{
+		OWN *save=list->cur,*AUX;
+		
+		list->cur=list->beg;
+		if(list->cur->next==NULL)
+			return LOWL_PROBLEM;
+		
+		while(list->cur->next!=NULL)
+		{
+			AUX=list->cur->next;
+			list->cur->next=malloc(sizeof(OWN));
+			list->cur->next->data=(list->cur->data + AUX->data)/2.0;
+			list->cur=list->cur->next;
+			list->cur->next=AUX;
+			list->cur=list->cur->next;
+		}
+		list->cur=save;
+		return LOWL_OK;
+	}
+	main()
+	{
+		return 0;
+	}
