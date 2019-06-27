@@ -66,6 +66,32 @@
 		}
 	}
 	
+	void prienik(MNC *A, MNC *B, MNC *D)
+	{
+		int i, aux,k=0;
+		D->pole=malloc(A->dlzka*sizeof(int));
+		
+		
+		for(i=0;i<B->dlzka;i++)
+		{
+			aux=zhoda(A, B->pole[i]);
+			
+			if(aux==ZHODA)
+			{
+				D[k]=B[i];
+				k++;
+			}
+		}
+		D->dlzka=k;
+		
+		printf("\n prienik je  : \n");
+		for(i=0;i<D->dlzka;i++)
+		{
+			printf("%d  ",D->pole[i]);
+		}
+		
+		
+	}
 	
 	int main()
 	{
@@ -75,4 +101,5 @@
 		nacitaj_pole(&B);
 		
 		zjednotenie(&A,&B,&C);
+		prienik(&A,&B,&D);
 	}
