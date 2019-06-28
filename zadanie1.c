@@ -10,16 +10,13 @@ typedef struct {
 	
 void nacitaj_pole(MNC *A)
 {
-	int i;
-	printf("zadaj dlzku pola\n");		
+	int i;	
 	scanf("%d",&A->dlzka);
 	A->pole=malloc(A->dlzka*sizeof(int));
-	printf("zadaj prvky pola\n");
 	for(i=0;i<A->dlzka;i++)
 	{
 		scanf("%d",&A->pole[i]);
 	}
-	printf("\n");
 }
 	
 int zhoda(MNC *A, int b)
@@ -57,12 +54,6 @@ void zjednotenie(MNC *A, MNC *B, MNC *C)
 		}
 	}
 	C->dlzka=A->dlzka+k;
-		
-	printf ("zjednotenie je ");
-	for(i=0;i<C->dlzka;i++)
-	{
-		printf("%d  ",C->pole[i]);
-	}
 }
 	
 void prienik(MNC *A, MNC *B, MNC *D)
@@ -80,15 +71,7 @@ void prienik(MNC *A, MNC *B, MNC *D)
 			k++;
 		}
 	}
-	D->dlzka=k;
-		
-	printf("\n prienik je  : \n");
-	for(i=0;i<D->dlzka;i++)
-	{
-		printf("%d  ",D->pole[i]);
-	}
-		
-		
+	D->dlzka=k;		
 }
 	
 int main()
